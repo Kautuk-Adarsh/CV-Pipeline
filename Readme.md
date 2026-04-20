@@ -137,4 +137,4 @@ cv_screening_pipeline/
 
 ---
 
-For the full pipeline walkthrough, scoring rubric, RAG architecture, API call strategy, troubleshooting, and roadmap — see the **[documentation site](https://yourusername.github.io/cv-screening-pipeline)**.
+For the full pipeline walkthrough, scoring rubric, RAG architecture, API call strategy, troubleshooting, and roadmap — see the **[documentation site](https://kautuk-adarsh.github.io/CV-Pipeline/#setup)**.
