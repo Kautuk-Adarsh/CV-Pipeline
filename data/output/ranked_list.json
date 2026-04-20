@@ -1,0 +1,32 @@
+{
+  "generated_at": "2026-04-20T12:11:05.766262",
+  "total_candidates": 1,
+  "tier_summary": {
+    "Strong": 1
+  },
+  "tiers": {
+    "Strong": [
+      {
+        "rank": 1,
+        "candidate_id": "C-001",
+        "original_file": "candidate_01.pdf",
+        "tier": "Strong",
+        "final_score": 103,
+        "pass2_score": 91,
+        "pass3_score": 12,
+        "gate_passed": true,
+        "summary": "This candidate presents an exceptionally strong profile for a Capital Markets role. Their academic record from a Tier 1 NLU is outstanding, complemented by a Dean's Merit Scholarship and a high class rank. The internships with top-tier firms and the regulator (SEBI) demonstrate extensive practical experience and deep technical knowledge in capital markets, including specific tasks related to IPOs, QIPs, DRHP drafting, and regulatory compliance. Furthermore, their success in corporate/securities law moots and relevant publications highlight strong analytical and research capabilities, making them a highly competitive candidate.",
+        "score_breakdown": {
+          "institution": 20,
+          "internship": 25,
+          "technical": 37,
+          "academic": 9,
+          "bonus": 12
+        }
+      }
+    ]
+  }
+}
+
+
+    

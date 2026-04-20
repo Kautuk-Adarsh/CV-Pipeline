@@ -1,0 +1,105 @@
+{
+  "candidate_id": "C-001",
+  "degree_type": "BA_LLB",
+  "degree_status": "pursuing",
+  "year_of_study": 5,
+  "institution_name": "National Law School of India University (NLSIU), Bangalore",
+  "cgpa": 8.7,
+  "cgpa_scale": 10.0,
+  "academic_awards": [
+    "Dean's Merit Scholarship, NLSIU",
+    "Best Researcher, National Corporate Law Moot, 2024"
+  ],
+  "class_rank": "12 of 120",
+  "internships": [
+    {
+      "organisation": "Cyril Amarchand Mangaldas",
+      "team_or_practice": "Capital Markets Team",
+      "duration_months": 3,
+      "role_description": "- Assisted in drafting of Draft Red Herring Prospectus (DRHP) for a mainboard IPO of a mid-cap manufacturing company, specifically the risk factors section and litigation disclosures chapter under Schedule VI of ICDR Regulations, 2018 - Reviewed SEBI observation letter and prepared initial response matrix flagging compliance gaps - Prepared LODR compliance checklist for the issuer covering board composition, audit committee requirements, and related party transaction disclosures required post-listing - Assisted in reviewing underwriting agreement and coordinating with merchant banker on book building timeline",
+      "domain_terms_found": [
+        "Draft Red Herring Prospectus",
+        "DRHP",
+        "IPO",
+        "risk factors",
+        "litigation disclosures",
+        "Schedule VI",
+        "ICDR Regulations, 2018",
+        "SEBI observation letter",
+        "compliance gaps",
+        "LODR compliance checklist",
+        "board composition",
+        "audit committee requirements",
+        "related party transaction disclosures",
+        "underwriting agreement",
+        "merchant banker",
+        "book building timeline"
+      ]
+    },
+    {
+      "organisation": "AZB & Partners",
+      "team_or_practice": "Capital Markets and M&A Team",
+      "duration_months": 3,
+      "role_description": "- Assisted in QIP transaction for a listed NBFC - drafted sections of the placement document and reviewed institutional investor agreements - Conducted due diligence on material contracts including loan agreements and key customer contracts for IPO readiness assessment - Researched FEMA provisions applicable to FPI participation in the QIP and prepared a regulatory note on applicable RBI approvals - Assisted in preferential allotment matter - drafted board and shareholder resolutions and reviewed ICDR compliance checklist",
+      "domain_terms_found": [
+        "QIP transaction",
+        "NBFC",
+        "placement document",
+        "institutional investor agreements",
+        "due diligence",
+        "material contracts",
+        "loan agreements",
+        "key customer contracts",
+        "IPO readiness assessment",
+        "FEMA provisions",
+        "FPI participation",
+        "regulatory note",
+        "RBI approvals",
+        "preferential allotment",
+        "board resolutions",
+        "shareholder resolutions",
+        "ICDR compliance checklist"
+      ]
+    },
+    {
+      "organisation": "SEBI",
+      "team_or_practice": "Division of Issues and Listing",
+      "duration_months": 2,
+      "role_description": "- Assisted in review of DRHP filings submitted by merchant bankers - identified disclosure gaps against ICDR Regulations requirements - Prepared internal notes on recent amendments to SEBI LODR Regulations and their impact on listed company disclosure obligations - Attended hearings related to SEBI enforcement proceedings under the Securities and Exchange Board of India Act, 1992",
+      "domain_terms_found": [
+        "DRHP filings",
+        "merchant bankers",
+        "disclosure gaps",
+        "ICDR Regulations",
+        "SEBI LODR Regulations",
+        "listed company disclosure obligations",
+        "SEBI enforcement proceedings",
+        "Securities and Exchange Board of India Act, 1992"
+      ]
+    }
+  ],
+  "publications": [
+    "Disclosure Obligations under ICDR Regulations 2018: A Critical Analysis of Risk Factor Drafting Standards",
+    "FPI Investment Limits in Listed Companies: Regulatory Framework and Recent SEBI Amendments"
+  ],
+  "moot_courts": [
+    {
+      "name": "National Corporate Law Moot Court Competition",
+      "result": "First Prize",
+      "topic": "SEBI Takeover Code and open offer obligations"
+    },
+    {
+      "name": "NUJS Securities Law Moot",
+      "result": "Second Prize",
+      "topic": "ICDR Regulations and mis-disclosure in DRHP"
+    }
+  ],
+  "languages": [
+    "English: proficient",
+    "Hindi: native",
+    "Kannada: working knowledge"
+  ],
+  "leadership_roles": null,
+  "international_exposure": null,
+  "other_certifications": null
+}

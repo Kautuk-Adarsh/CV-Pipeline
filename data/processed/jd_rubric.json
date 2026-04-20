@@ -1,0 +1,82 @@
+{
+  "criterion_weights": {
+    "institution_prestige": 5,
+    "internship_quality": 35,
+    "technical_knowledge": 45,
+    "academic_performance": 15
+  },
+  "semantic_domain_map": {
+    "core_domain": "Indian Capital Markets Law",
+    "high_relevance_adjacent": [
+      "Securities Law",
+      "Financial Regulation",
+      "Corporate Law",
+      "Foreign Exchange Management Act (FEMA)"
+    ],
+    "low_relevance_adjacent": [
+      "Mergers & Acquisitions",
+      "Banking & Finance",
+      "General Corporate Advisory"
+    ],
+    "not_relevant": [
+      "Litigation",
+      "Real Estate Law",
+      "Intellectual Property Law",
+      "Tax Law",
+      "Labour Law"
+    ]
+  },
+  "jd_keywords": [
+    "Capital Markets",
+    "Securities Law",
+    "IPOs",
+    "QIPs",
+    "Rights issues",
+    "Preferential allotments",
+    "Domestic securities transactions",
+    "Cross-border securities transactions",
+    "Offer documents",
+    "DRHPs",
+    "Red Herring Prospectuses",
+    "Abridged Prospectuses",
+    "Mainboard IPOs",
+    "SME IPOs",
+    "Legal due diligence",
+    "Material contracts",
+    "Litigation history",
+    "Regulatory approvals",
+    "Corporate governance compliance",
+    "Filings",
+    "SEBI",
+    "NSE",
+    "BSE",
+    "DRHP filings",
+    "SEBI observation letter responses",
+    "Listing applications",
+    "ICDR Regulations 2018",
+    "LODR Regulations 2015",
+    "Underwriting agreements",
+    "Escrow agreements",
+    "Broker agreements",
+    "FEMA compliance",
+    "Foreign investors",
+    "FPIs",
+    "Foreign promoters",
+    "Board resolutions",
+    "Shareholder resolutions",
+    "Placement documents",
+    "Post-allotment filings",
+    "Transaction timelines",
+    "Merchant bankers",
+    "Registrars",
+    "Intermediaries",
+    "SEBI circulars",
+    "SEBI amendments",
+    "SEBI enforcement actions",
+    "SEBI Takeover Code",
+    "Financial regulation",
+    "Issuers",
+    "Investment banks",
+    "Institutional investors"
+  ]
+}

@@ -1,0 +1,15 @@
+{
+  "candidate_id": "C-001",
+  "original_file": "candidate_01.pdf",
+  "generated_at": "2026-04-20T12:11:05.768127",
+  "gate_result": true,
+  "final_score": 103,
+  "tier": "Strong",
+  "key_evidence": {
+    "degree": "\"degree_type\": \"BA_LLB\", \"institution_name\": \"National Law School of India University (NLSIU), Bangalore\"",
+    "institution": "\"institution_name\": \"National Law School of India University (NLSIU), Bangalore\"",
+    "best_internship_evidence": "The candidate has completed three internships with Tier 1 organizations (Cyril Amarchand Mangaldas, AZB & Partners, and SEBI). In all instances, the work described is highly specific and substantive, including drafting offer document sections, conducting due diligence, reviewing regulatory responses, and preparing compliance checklists, consistently demonstrating deep practical experience in capital markets law.",
+    "technical_evidence": "- Assisted in drafting of Draft Red Herring Prospectus (DRHP) for a mainboard IPO of a mid-cap manufacturing company, specifically the risk factors section and litigation disclosures chapter under Schedule VI of ICDR Regulations, 2018 - Reviewed SEBI observation letter and prepared initial response matrix flagging compliance gaps - Prepared LODR compliance checklist for the issuer covering board composition, audit committee requirements, and related party transaction disclosures required post-listing - Assisted in reviewing underwriting agreement and coordinating with merchant banker on book building timeline",
+    "academic_evidence": "\"cgpa\": 8.7, \"cgpa_scale\": 10.0, \"academic_awards\": [\"Dean's Merit Scholarship, NLSIU\"], \"class_rank\": \"12 of 120\""
+  }
+}

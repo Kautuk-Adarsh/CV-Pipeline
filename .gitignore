@@ -7,38 +7,28 @@ venv/
 ENV/
 env/
 .env
-.env.example # Remove this if you want to track the template (usually tracked)
 
-# --- Project Specific Data (Inputs/Outputs) ---
-# We ignore the actual data files to protect privacy and keep the repo light
-data/input/job_description.txt
-data/input/cvs/*
-!data/input/cvs/.gitkeep
-
-data/processed/
-data/output/
-!data/output/.gitkeep
-
-# --- Vector Database & RAG ---
-# Ignore local ChromaDB storage and downloaded models
-chroma_db/
+# --- Vector Database ---
 vector_store/
+chroma_db/
 .chroma/
+
+# --- Model cache ---
 models/
 sentencetransformers_*/
+.cache/
 
-# --- Flask / Web ---
+# --- Prevent real CVs from being committed accidentally ---
+data/input/cvs/*.pdf
+data/input/cvs/*.docx
+
+# --- Flask ---
 instance/
 .webassets-cache
-static/.webassets-cache
 
-# --- OS / IDE Specific ---
+# --- OS / IDE ---
 .DS_Store
 .vscode/
 .idea/
 *.swp
 *.log
-
-# --- Docling / IBM Artifacts ---
-# Docling may download models locally; ignore cache if stored in project root
-.cache/

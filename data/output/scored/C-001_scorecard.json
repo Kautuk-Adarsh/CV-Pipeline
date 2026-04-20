@@ -1,0 +1,158 @@
+{
+  "candidate_id": "C-001",
+  "pass1": {
+    "gate_1_1_degree": {
+      "result": "pass",
+      "evidence": "\"degree_type\": \"BA_LLB\", \"institution_name\": \"National Law School of India University (NLSIU), Bangalore\"",
+      "reasoning": "The candidate is pursuing a BA LLB from NLSIU, a recognised Indian institution, meeting the degree type requirement."
+    },
+    "gate_1_2_backlogs": {
+      "result": "pass",
+      "evidence": "\"degree_status\": \"pursuing\", \"year_of_study\": 5",
+      "reasoning": "The candidate is currently in their 5th year of a BA LLB, indicating active pursuit of a valid law degree without explicit mention of backlogs or non-completion."
+    },
+    "overall_pass1": true
+  },
+  "pass2": {
+    "criterion_2_1": {
+      "institution_name": "National Law School of India University (NLSIU), Bangalore",
+      "tier_from_rag": 1,
+      "evidence": "\"institution_name\": \"National Law School of India University (NLSIU), Bangalore\"",
+      "reasoning": "The candidate is from National Law School of India University (NLSIU), Bangalore. The RAG context confirms NLSIU as a Tier 1 NLU, which is the highest prestige category.",
+      "score": 20
+    },
+    "criterion_2_2": {
+      "internships_evaluated": [
+        {
+          "organisation": "Cyril Amarchand Mangaldas",
+          "org_tier": 1,
+          "work_depth": "deep",
+          "evidence": "- Assisted in drafting of Draft Red Herring Prospectus (DRHP) for a mainboard IPO of a mid-cap manufacturing company, specifically the risk factors section and litigation disclosures chapter under Schedule VI of ICDR Regulations, 2018 - Reviewed SEBI observation letter and prepared initial response matrix flagging compliance gaps - Prepared LODR compliance checklist for the issuer covering board composition, audit committee requirements, and related party transaction disclosures required post-listing - Assisted in reviewing underwriting agreement and coordinating with merchant banker on book building timeline",
+          "reasoning": "Cyril Amarchand Mangaldas is a Tier 1 firm. The work described is highly specific, involving drafting, reviewing regulatory responses, preparing compliance checklists, and reviewing agreements, demonstrating deep engagement."
+        },
+        {
+          "organisation": "AZB & Partners",
+          "org_tier": 1,
+          "work_depth": "deep",
+          "evidence": "- Assisted in QIP transaction for a listed NBFC - drafted sections of the placement document and reviewed institutional investor agreements - Conducted due diligence on material contracts including loan agreements and key customer contracts for IPO readiness assessment - Researched FEMA provisions applicable to FPI participation in the QIP and prepared a regulatory note on applicable RBI approvals - Assisted in preferential allotment matter - drafted board and shareholder resolutions and reviewed ICDR compliance checklist",
+          "reasoning": "AZB & Partners is a Tier 1 firm. The work includes drafting placement documents, conducting due diligence, researching complex regulatory provisions (FEMA, FPI), and drafting resolutions, indicating deep and substantive involvement."
+        },
+        {
+          "organisation": "SEBI",
+          "org_tier": 1,
+          "work_depth": "deep",
+          "evidence": "- Assisted in review of DRHP filings submitted by merchant bankers - identified disclosure gaps against ICDR Regulations requirements - Prepared internal notes on recent amendments to SEBI LODR Regulations and their impact on listed company disclosure obligations - Attended hearings related to SEBI enforcement proceedings under the Securities and Exchange Board of India Act, 1992",
+          "reasoning": "SEBI is a Tier 1 regulator, considered a strong signal for Capital Markets interest. The work involves reviewing regulatory filings, identifying disclosure gaps, preparing notes on regulatory amendments, and attending enforcement hearings, demonstrating deep insight into regulatory processes."
+        }
+      ],
+      "overall_reasoning": "The candidate has completed three internships with Tier 1 organizations (Cyril Amarchand Mangaldas, AZB & Partners, and SEBI). In all instances, the work described is highly specific and substantive, including drafting offer document sections, conducting due diligence, reviewing regulatory responses, and preparing compliance checklists, consistently demonstrating deep practical experience in capital markets law.",
+      "score": 25
+    },
+    "criterion_2_3": {
+      "jd_keywords_found": [
+        "Capital Markets",
+        "Securities Law",
+        "IPOs",
+        "QIPs",
+        "Preferential allotments",
+        "Offer documents",
+        "DRHPs",
+        "Mainboard IPOs",
+        "Legal due diligence",
+        "Material contracts",
+        "Litigation history",
+        "Regulatory approvals",
+        "Corporate governance compliance",
+        "Filings",
+        "SEBI",
+        "DRHP filings",
+        "SEBI observation letter responses",
+        "ICDR Regulations 2018",
+        "LODR Regulations 2015",
+        "Underwriting agreements",
+        "FEMA compliance",
+        "Foreign investors",
+        "FPIs",
+        "Board resolutions",
+        "Shareholder resolutions",
+        "Placement documents",
+        "Post-allotment filings",
+        "Transaction timelines",
+        "Merchant bankers",
+        "SEBI amendments",
+        "SEBI enforcement actions",
+        "SEBI Takeover Code",
+        "Financial regulation",
+        "Issuers",
+        "Institutional investors"
+      ],
+      "jd_keywords_missing": [
+        "Rights issues",
+        "Domestic securities transactions",
+        "Cross-border securities transactions",
+        "Red Herring Prospectuses",
+        "Abridged Prospectuses",
+        "SME IPOs",
+        "NSE",
+        "BSE",
+        "Listing applications",
+        "Escrow agreements",
+        "Broker agreements",
+        "Foreign promoters",
+        "Registrars",
+        "Intermediaries",
+        "SEBI circulars",
+        "Investment banks"
+      ],
+      "subscore_a": {
+        "evidence": "- Assisted in drafting of Draft Red Herring Prospectus (DRHP) for a mainboard IPO of a mid-cap manufacturing company, specifically the risk factors section and litigation disclosures chapter under Schedule VI of ICDR Regulations, 2018 - Reviewed SEBI observation letter and prepared initial response matrix flagging compliance gaps - Prepared LODR compliance checklist for the issuer covering board composition, audit committee requirements, and related party transaction disclosures required post-listing - Assisted in reviewing underwriting agreement and coordinating with merchant banker on book building timeline",
+        "reasoning": "The candidate correctly uses 39 out of 56 JD keywords (69.64%) in context across their internships and publications. The usage is consistently accurate and demonstrates practical application rather than mere listing, indicating strong alignment with JD requirements.",
+        "score": 28
+      },
+      "subscore_b": {
+        "evidence": "- Assisted in drafting of Draft Red Herring Prospectus (DRHP) for a mainboard IPO... specifically the risk factors section and litigation disclosures chapter under Schedule VI of ICDR Regulations, 2018 - Researched FEMA provisions applicable to FPI participation in the QIP and prepared a regulatory note on applicable RBI approvals - Prepared internal notes on recent amendments to SEBI LODR Regulations and their impact on listed company disclosure obligations",
+        "reasoning": "The candidate demonstrates deep domain understanding through specific examples like drafting detailed sections of DRHP under ICDR, researching complex FEMA provisions for FPIs, and analyzing the impact of SEBI LODR amendments. This goes beyond surface-level familiarity, showing genuine insight into Indian Capital Markets Law.",
+        "score": 9
+      },
+      "total_score": 37
+    },
+    "criterion_2_4": {
+      "cgpa": 8.7,
+      "cgpa_band": "super_dream",
+      "bonus_items": [
+        "Dean's Merit Scholarship, NLSIU",
+        "12 of 120"
+      ],
+      "evidence": "\"cgpa\": 8.7, \"cgpa_scale\": 10.0, \"academic_awards\": [\"Dean's Merit Scholarship, NLSIU\"], \"class_rank\": \"12 of 120\"",
+      "reasoning": "The candidate's CGPA of 8.7/10.0 places them in the 'Super Dream Zone'. Additionally, a Dean's Merit Scholarship and a strong class rank (12 of 120) provide significant bonus points, reflecting excellent academic performance.",
+      "score": 9
+    },
+    "total_pass2_score": 91
+  },
+  "pass3": {
+    "moot_court": {
+      "evidence": "\"National Corporate Law Moot Court Competition\" - \"First Prize\" - \"Topic: SEBI Takeover Code and open offer obligations\", \"NUJS Securities Law Moot\" - \"Second Prize\" - \"Topic: ICDR Regulations and mis-disclosure in DRHP\"",
+      "score": 5
+    },
+    "publications": {
+      "evidence": "\"Disclosure Obligations under ICDR Regulations 2018: A Critical Analysis of Risk Factor Drafting Standards\", \"FPI Investment Limits in Listed Companies: Regulatory Framework and Recent SEBI Amendments\"",
+      "score": 5
+    },
+    "international_exposure": {
+      "evidence": "Not mentioned in CV",
+      "score": 0
+    },
+    "leadership": {
+      "evidence": "Not mentioned in CV",
+      "score": 0
+    },
+    "languages": {
+      "evidence": "\"English: proficient\", \"Hindi: native\", \"Kannada: working knowledge\"",
+      "score": 2
+    },
+    "total_pass3_score": 12
+  },
+  "final_score": 103,
+  "tier": "Strong",
+  "summary": "This candidate presents an exceptionally strong profile for a Capital Markets role. Their academic record from a Tier 1 NLU is outstanding, complemented by a Dean's Merit Scholarship and a high class rank. The internships with top-tier firms and the regulator (SEBI) demonstrate extensive practical experience and deep technical knowledge in capital markets, including specific tasks related to IPOs, QIPs, DRHP drafting, and regulatory compliance. Furthermore, their success in corporate/securities law moots and relevant publications highlight strong analytical and research capabilities, making them a highly competitive candidate."
+}
