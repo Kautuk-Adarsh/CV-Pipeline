@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CV Screening — Ranked Results</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+  <div class="container">
+    <div class="header">
+      <h1>CV Screening Results</h1>
+      <p class="subtitle">Generated: {{ data.generated_at[:19].replace('T', ' ') }} &nbsp;|&nbsp; Total candidates: {{ data.total_candidates }}</p>
+    </div>
+
+    <div class="tier-summary">
+      {% for tier, count in data.tier_summary.items() %}
+        {% if count > 0 %}
+          <div class="summary-pill tier-{{ tier.lower().replace(' ', '-') }}">
+            {{ tier }}: {{ count }}
+          </div>
+        {% endif %}
+      {% endfor %}
+    </div>
+
+    {% set tier_order = ["Strong", "Competitive", "Weak", "Below Threshold", "Disqualified", "Error"] %}
+    {% set tier_labels = {
+      "Strong": "🟢 Strong — Recommend Interview",
+      "Competitive": "🔵 Competitive — Consider Interview",
+      "Weak": "🟡 Weak — Hold",
+      "Below Threshold": "🔴 Below Threshold — Do Not Proceed",
+      "Disqualified": "⛔ Disqualified — Failed Gate Check",
+      "Error": "⚠️ Error — Review Manually"
+    } %}
+
+    {% for tier in tier_order %}
+      {% if data.tiers[tier] is defined and data.tiers[tier] %}
+        <div class="tier-section">
+          <h2 class="tier-heading tier-{{ tier.lower().replace(' ', '-') }}">
+            {{ tier_labels[tier] }}
+          </h2>
+          <table class="candidates-table">
+            <thead>
+              <tr>
+                <th>Rank</th>
+                <th>Candidate ID</th>
+                <th>Total Score</th>
+                <th>Institution</th>
+                <th>Internship</th>
+                <th>Technical</th>
+                <th>Academic</th>
+                <th>Bonus</th>
+                <th></th>
+              </tr>
+            </thead>
+            <tbody>
+              {% for candidate in data.tiers[tier] %}
+              <tr class="candidate-row">
+                <td class="rank">#{{ candidate.rank }}</td>
+                <td class="cid">{{ candidate.candidate_id }}</td>
+                <td class="score-total">
+                  <span class="score-badge tier-{{ tier.lower().replace(' ', '-') }}">
+                    {{ candidate.final_score }} / 115
+                  </span>
+                </td>
+                <td class="score-cell">{{ candidate.score_breakdown.institution }} <span class="max">/20</span></td>
+                <td class="score-cell">{{ candidate.score_breakdown.internship }} <span class="max">/25</span></td>
+                <td class="score-cell">{{ candidate.score_breakdown.technical }} <span class="max">/45</span></td>
+                <td class="score-cell">{{ candidate.score_breakdown.academic }} <span class="max">/10</span></td>
+                <td class="score-cell">+{{ candidate.score_breakdown.bonus }} <span class="max">/15</span></td>
+                <td>
+                  <a href="/candidate/{{ candidate.candidate_id }}" class="view-btn">View Scorecard</a>
+                </td>
+              </tr>
+              {% if candidate.summary %}
+              <tr class="summary-row">
+                <td colspan="9" class="summary-text">{{ candidate.summary }}</td>
+              </tr>
+              {% endif %}
+              {% endfor %}
+            </tbody>
+          </table>
+        </div>
+      {% endif %}
+    {% endfor %}
+
+    <div class="footer">
+      <p>All scores are evidence-based. Click "View Scorecard" to see the full evidence trail for any candidate.</p>
+      <p>Scoring was fully automated. No human intervention occurred during the evaluation process.</p>
+    </div>
+  </div>
+</body>
+</html>

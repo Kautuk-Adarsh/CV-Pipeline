@@ -1,0 +1,6 @@
+google-genai==1.16.0
+docling==2.5.0
+chromadb==0.5.3
+sentence-transformers==3.0.1
+flask==3.0.3
+python-dotenv==1.0.1

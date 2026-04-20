@@ -1,0 +1,202 @@
+[
+  {
+    "name": "AZB & Partners",
+    "type": "law_firm",
+    "tier": 1,
+    "capm_relevance": "very_high",
+    "cities": ["Mumbai", "Delhi", "Bangalore"],
+    "notes": "Tier 1 Indian law firm. One of the largest Capital Markets practices in India. Routinely advises on IPOs, QIPs, rights issues, and debt capital markets."
+  },
+  {
+    "name": "Cyril Amarchand Mangaldas",
+    "type": "law_firm",
+    "tier": 1,
+    "capm_relevance": "very_high",
+    "cities": ["Mumbai", "Delhi", "Bangalore", "Hyderabad", "Chennai", "Ahmedabad"],
+    "notes": "Tier 1 Indian law firm. Largest law firm in India by headcount. Dominant Capital Markets and M&A practice. Successor to Amarchand Mangaldas."
+  },
+  {
+    "name": "Khaitan & Co",
+    "type": "law_firm",
+    "tier": 1,
+    "capm_relevance": "very_high",
+    "cities": ["Mumbai", "Delhi", "Kolkata", "Bangalore"],
+    "notes": "Tier 1 Indian law firm. Strong Capital Markets and private equity practice. Known for rigorous internship selection process."
+  },
+  {
+    "name": "Shardul Amarchand Mangaldas",
+    "type": "law_firm",
+    "tier": 1,
+    "capm_relevance": "very_high",
+    "cities": ["Delhi", "Mumbai", "Bangalore"],
+    "notes": "Tier 1 Indian law firm. Strong Capital Markets practice. Split from Cyril Amarchand Mangaldas."
+  },
+  {
+    "name": "S&R Associates",
+    "type": "law_firm",
+    "tier": 1,
+    "capm_relevance": "very_high",
+    "cities": ["Delhi", "Mumbai"],
+    "notes": "Tier 1 Indian law firm. Boutique focus on Capital Markets and M&A. High quality transactional work."
+  },
+  {
+    "name": "Latham & Watkins",
+    "type": "law_firm",
+    "tier": 1,
+    "capm_relevance": "high",
+    "cities": ["International"],
+    "notes": "Top global law firm. India practice focuses on cross-border Capital Markets transactions."
+  },
+  {
+    "name": "Trilegal",
+    "type": "law_firm",
+    "tier": 2,
+    "capm_relevance": "high",
+    "cities": ["Mumbai", "Delhi", "Bangalore", "Hyderabad"],
+    "notes": "Tier 2 Indian law firm. Strong transactional practice including Capital Markets."
+  },
+  {
+    "name": "Luthra and Luthra Law Offices",
+    "type": "law_firm",
+    "tier": 2,
+    "capm_relevance": "high",
+    "cities": ["Delhi", "Mumbai", "Bangalore"],
+    "notes": "Tier 2 Indian law firm. Established Capital Markets practice."
+  },
+  {
+    "name": "JSA Advocates & Solicitors",
+    "type": "law_firm",
+    "tier": 2,
+    "capm_relevance": "high",
+    "cities": ["Mumbai", "Delhi", "Bangalore", "Chennai", "Hyderabad"],
+    "notes": "Tier 2 Indian law firm. Active Capital Markets practice."
+  },
+  {
+    "name": "L&L Partners",
+    "type": "law_firm",
+    "tier": 2,
+    "capm_relevance": "high",
+    "cities": ["Delhi", "Mumbai", "Bangalore"],
+    "notes": "Tier 2 Indian law firm. Formerly Lall Lahiri & Salhotra. Capital Markets and private equity work."
+  },
+  {
+    "name": "Argus Partners",
+    "type": "law_firm",
+    "tier": 2,
+    "capm_relevance": "medium",
+    "cities": ["Mumbai", "Kolkata", "Hyderabad"],
+    "notes": "Tier 2 Indian law firm. Growing Capital Markets practice."
+  },
+  {
+    "name": "SEBI",
+    "type": "regulator",
+    "tier": 1,
+    "capm_relevance": "very_high",
+    "cities": ["Mumbai", "Delhi"],
+    "notes": "Securities and Exchange Board of India. Primary securities regulator. Internship here is the single strongest signal for Capital Markets interest and knowledge."
+  },
+  {
+    "name": "Reserve Bank of India",
+    "type": "regulator",
+    "tier": 1,
+    "capm_relevance": "high",
+    "cities": ["Mumbai"],
+    "notes": "Central bank. Regulates debt markets, foreign exchange, and banking. High relevance for CapM candidates interested in debt capital markets and FEMA."
+  },
+  {
+    "name": "National Stock Exchange",
+    "type": "exchange",
+    "tier": 1,
+    "capm_relevance": "very_high",
+    "cities": ["Mumbai"],
+    "notes": "Primary stock exchange. Internship directly relevant to listing, compliance, and market operations."
+  },
+  {
+    "name": "NSE",
+    "type": "exchange",
+    "tier": 1,
+    "capm_relevance": "very_high",
+    "cities": ["Mumbai"],
+    "notes": "National Stock Exchange — same as NSE. Abbreviation entry."
+  },
+  {
+    "name": "Bombay Stock Exchange",
+    "type": "exchange",
+    "tier": 1,
+    "capm_relevance": "very_high",
+    "cities": ["Mumbai"],
+    "notes": "Oldest stock exchange in Asia. Internship directly relevant to listing and Capital Markets."
+  },
+  {
+    "name": "BSE",
+    "type": "exchange",
+    "tier": 1,
+    "capm_relevance": "very_high",
+    "cities": ["Mumbai"],
+    "notes": "Bombay Stock Exchange — abbreviation entry."
+  },
+  {
+    "name": "IFSCA",
+    "type": "regulator",
+    "tier": 1,
+    "capm_relevance": "high",
+    "cities": ["Gandhinagar"],
+    "notes": "International Financial Services Centres Authority. Regulates GIFT City. Relevant for cross-border Capital Markets."
+  },
+  {
+    "name": "Kotak Investment Banking",
+    "type": "investment_bank",
+    "tier": 1,
+    "capm_relevance": "very_high",
+    "cities": ["Mumbai"],
+    "notes": "Leading domestic investment bank. IPO and QIP advisory."
+  },
+  {
+    "name": "JM Financial",
+    "type": "investment_bank",
+    "tier": 1,
+    "capm_relevance": "very_high",
+    "cities": ["Mumbai"],
+    "notes": "Leading domestic investment bank. Active in IPO and debt capital markets."
+  },
+  {
+    "name": "Axis Capital",
+    "type": "investment_bank",
+    "tier": 1,
+    "capm_relevance": "very_high",
+    "cities": ["Mumbai"],
+    "notes": "Axis Bank subsidiary. Active in equity capital markets."
+  },
+  {
+    "name": "Goldman Sachs",
+    "type": "investment_bank",
+    "tier": 1,
+    "capm_relevance": "high",
+    "cities": ["Mumbai", "Bangalore"],
+    "notes": "Global investment bank. India operations focus on cross-border transactions."
+  },
+  {
+    "name": "Morgan Stanley",
+    "type": "investment_bank",
+    "tier": 1,
+    "capm_relevance": "high",
+    "cities": ["Mumbai"],
+    "notes": "Global investment bank. Active in India equity capital markets."
+  },
+  {
+    "name": "Nuvama Wealth Management",
+    "type": "investment_bank",
+    "tier": 2,
+    "capm_relevance": "high",
+    "cities": ["Mumbai"],
+    "notes": "Mid-tier investment bank. Active in SME IPOs and wealth management."
+  },
+  {
+    "name": "General Corporate Boutique",
+    "type": "law_firm",
+    "tier": 3,
+    "capm_relevance": "low",
+    "cities": ["Various"],
+    "notes": "Generic entry for small boutique firms with no established Capital Markets practice. Partial credit only if work described shows CapM exposure."
+  }
+]

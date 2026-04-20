@@ -1,0 +1,612 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CV Screening Pipeline — Documentation</title>
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --bg:#ffffff;--bg2:#f7f7f5;--bg3:#f0f0ec;
+  --text:#111111;--text2:#555555;--text3:#888888;
+  --border:#e0e0da;--border2:#d0d0ca;
+  --purple:#534ab7;--purple-bg:#eeedfe;--purple-light:#f4f3ff;
+  --teal:#0f6e56;--teal-bg:#e1f5ee;
+  --amber:#854f0b;--amber-bg:#faeeda;
+  --blue:#185fa5;--blue-bg:#e6f1fb;
+  --green:#27500a;--green-bg:#eaf3de;
+  --red:#a32d2d;--red-bg:#fcebeb;
+  --gray:#5f5e5a;--gray-bg:#f1efe8;
+}
+body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;background:var(--bg2);color:var(--text);line-height:1.6}
+a{color:var(--purple);text-decoration:none}
+a:hover{text-decoration:underline}
+code{font-family:'SF Mono','Courier New',monospace;font-size:12px;background:var(--bg3);border:0.5px solid var(--border);border-radius:4px;padding:1px 6px;color:#333}
+pre{background:#1a1a1a;color:#e8e8e8;border-radius:10px;padding:20px;overflow-x:auto;font-size:13px;line-height:1.7;margin:16px 0}
+pre code{background:none;border:none;padding:0;color:inherit;font-size:inherit}
+
+.nav{background:var(--bg);border-bottom:0.5px solid var(--border);position:sticky;top:0;z-index:100}
+.nav-inner{max-width:1100px;margin:0 auto;padding:0 24px;display:flex;align-items:center;justify-content:space-between;height:54px}
+.nav-brand{font-size:15px;font-weight:600;color:var(--text)}
+.nav-links{display:flex;gap:24px}
+.nav-links a{font-size:13px;color:var(--text2)}
+.nav-links a:hover{color:var(--text);text-decoration:none}
+
+.hero{background:var(--bg);border-bottom:0.5px solid var(--border);padding:56px 24px 48px}
+.hero-inner{max-width:760px;margin:0 auto;text-align:center}
+.hero h1{font-size:36px;font-weight:700;color:var(--text);margin-bottom:12px;letter-spacing:-0.5px}
+.hero p{font-size:17px;color:var(--text2);margin-bottom:28px;line-height:1.6}
+.hero-badges{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin-bottom:32px}
+.badge{display:inline-block;padding:4px 12px;border-radius:20px;font-size:12px;font-weight:500}
+.badge-purple{background:var(--purple-bg);color:var(--purple)}
+.badge-teal{background:var(--teal-bg);color:var(--teal)}
+.badge-amber{background:var(--amber-bg);color:var(--amber)}
+.badge-blue{background:var(--blue-bg);color:var(--blue)}
+.hero-cta{display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
+.btn{display:inline-block;padding:10px 22px;border-radius:8px;font-size:14px;font-weight:500;cursor:pointer;transition:opacity .15s}
+.btn-primary{background:var(--purple);color:white}
+.btn-primary:hover{opacity:.88;text-decoration:none}
+.btn-secondary{background:var(--bg2);border:0.5px solid var(--border2);color:var(--text)}
+.btn-secondary:hover{background:var(--bg3);text-decoration:none}
+
+.layout{max-width:1100px;margin:0 auto;padding:48px 24px;display:grid;grid-template-columns:220px 1fr;gap:48px;align-items:start}
+.sidebar{position:sticky;top:70px}
+.sidebar nav{display:flex;flex-direction:column;gap:2px}
+.sidebar-section{font-size:11px;font-weight:600;color:var(--text3);text-transform:uppercase;letter-spacing:.06em;padding:14px 10px 4px}
+.sidebar a{font-size:13px;color:var(--text2);padding:5px 10px;border-radius:6px;display:block}
+.sidebar a:hover{background:var(--bg3);color:var(--text);text-decoration:none}
+.sidebar a.active{background:var(--purple-bg);color:var(--purple);font-weight:500}
+
+.content section{margin-bottom:56px;scroll-margin-top:80px}
+.content h2{font-size:22px;font-weight:600;color:var(--text);margin-bottom:6px;padding-bottom:10px;border-bottom:0.5px solid var(--border)}
+.content h3{font-size:16px;font-weight:600;color:var(--text);margin:24px 0 10px}
+.content p{font-size:14px;color:var(--text2);margin-bottom:12px;line-height:1.7}
+.content ul{padding-left:20px;margin-bottom:12px}
+.content li{font-size:14px;color:var(--text2);margin-bottom:5px;line-height:1.6}
+
+.card{background:var(--bg);border:0.5px solid var(--border);border-radius:12px;padding:20px 24px;margin-bottom:14px}
+.card-title{font-size:14px;font-weight:600;color:var(--text);margin-bottom:6px}
+.card-desc{font-size:13px;color:var(--text2);line-height:1.6}
+
+.table-wrap{overflow-x:auto;margin:16px 0}
+table{width:100%;border-collapse:collapse;font-size:13px}
+th{text-align:left;padding:8px 14px;background:var(--bg3);font-weight:500;color:var(--text2);font-size:11px;text-transform:uppercase;letter-spacing:.05em;border-bottom:0.5px solid var(--border)}
+td{padding:10px 14px;border-bottom:0.5px solid var(--border2);color:var(--text2);vertical-align:top}
+tr:last-child td{border-bottom:none}
+tr:hover td{background:var(--bg2)}
+
+.callout{border-radius:8px;padding:14px 18px;margin:16px 0;font-size:13px;line-height:1.6;border-left:3px solid}
+.callout-info{background:var(--blue-bg);border-color:var(--blue);color:#0c447c}
+.callout-warn{background:var(--amber-bg);border-color:var(--amber);color:var(--amber)}
+.callout-tip{background:var(--teal-bg);border-color:var(--teal);color:var(--teal)}
+.callout-title{font-weight:600;margin-bottom:4px}
+
+.tag-row{display:flex;flex-wrap:wrap;gap:8px;margin:10px 0}
+.tag{display:inline-block;padding:3px 10px;border-radius:4px;font-size:12px;font-weight:500}
+
+.pipeline-steps{display:flex;flex-direction:column;gap:0;margin:20px 0}
+.step{display:flex;gap:16px;align-items:flex-start}
+.step-connector{display:flex;flex-direction:column;align-items:center;flex-shrink:0}
+.step-dot{width:32px;height:32px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:600;flex-shrink:0}
+.step-line{width:2px;height:24px;background:var(--border2);flex-shrink:0}
+.step-body{padding-bottom:24px;flex:1}
+.step-title{font-size:14px;font-weight:600;color:var(--text);margin-bottom:4px}
+.step-desc{font-size:13px;color:var(--text2);line-height:1.6}
+.step-meta{margin-top:6px;display:flex;gap:8px;flex-wrap:wrap}
+
+.flow-diagram{background:var(--bg);border:0.5px solid var(--border);border-radius:12px;padding:28px;margin:20px 0;display:flex;flex-direction:column;align-items:center;gap:0}
+.flow-row{display:flex;gap:12px;justify-content:center}
+.flow-box{border-radius:8px;padding:10px 16px;text-align:center;cursor:pointer;transition:transform .15s;min-width:140px}
+.flow-box:hover{transform:translateY(-2px)}
+.flow-box .fbt{font-size:13px;font-weight:600}
+.flow-box .fbs{font-size:11px;opacity:.8;margin-top:2px}
+.flow-arrow{width:2px;height:18px;background:var(--border2);margin:0 auto}
+.flow-split{display:flex;gap:12px;align-items:flex-start}
+.flow-h{height:2px;background:var(--border2);width:30px;margin-top:17px}
+
+.score-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:16px 0}
+.score-card{background:var(--bg);border:0.5px solid var(--border);border-radius:10px;padding:16px}
+.score-pts{font-size:28px;font-weight:700;line-height:1}
+.score-label{font-size:12px;color:var(--text3);margin-bottom:8px}
+.score-desc{font-size:12px;color:var(--text2);line-height:1.5}
+.score-bar{height:4px;border-radius:2px;margin-top:10px}
+
+.tier-row{display:flex;align-items:center;gap:12px;padding:10px 14px;border-radius:8px;margin-bottom:8px}
+.tier-dot{width:10px;height:10px;border-radius:50%;flex-shrink:0}
+.tier-name{font-size:14px;font-weight:500;width:140px;flex-shrink:0}
+.tier-range{font-size:13px;color:var(--text3);width:80px}
+.tier-desc{font-size:13px;color:var(--text2)}
+
+footer{background:var(--bg);border-top:0.5px solid var(--border);padding:28px 24px;text-align:center}
+footer p{font-size:13px;color:var(--text3)}
+
+@media(max-width:768px){
+  .layout{grid-template-columns:1fr}
+  .sidebar{display:none}
+  .hero h1{font-size:26px}
+  .score-grid{grid-template-columns:1fr}
+  .flow-split{flex-direction:column;align-items:center}
+}
+</style>
+</head>
+<body>
+
+<nav class="nav">
+  <div class="nav-inner">
+    <span class="nav-brand">CV Screening Pipeline</span>
+    <div class="nav-links">
+      <a href="#overview">Overview</a>
+      <a href="#pipeline">Pipeline</a>
+      <a href="#rubric">Rubric</a>
+      <a href="#setup">Setup</a>
+      <a href="#troubleshooting">Troubleshoot</a>
+    </div>
+  </div>
+</nav>
+
+<div class="hero">
+  <div class="hero-inner">
+    <h1>CV Screening Pipeline</h1>
+    <p>From job description to ranked shortlist — fully automated, evidence-backed, and explainable at every step.</p>
+    <div class="hero-badges">
+      <span class="badge badge-purple">Python 3.11+</span>
+      <span class="badge badge-teal">Gemini 2.5 Flash</span>
+      <span class="badge badge-blue">ChromaDB + RAG</span>
+      <span class="badge badge-amber">Docling PDF Parsing</span>
+      <span class="badge badge-teal">Flask Dashboard</span>
+    </div>
+    <div class="hero-cta">
+      <a href="#setup" class="btn btn-primary">Get Started</a>
+      <a href="https://github.com/yourusername/cv-screening-pipeline" class="btn btn-secondary">View on GitHub</a>
+    </div>
+  </div>
+</div>
+
+<div class="layout">
+  <aside class="sidebar">
+    <nav>
+      <div class="sidebar-section">Introduction</div>
+      <a href="#overview" class="active">Overview</a>
+      <a href="#features">Key Features</a>
+      <a href="#tech">Tech Stack</a>
+      <div class="sidebar-section">How It Works</div>
+      <a href="#pipeline">Pipeline Stages</a>
+      <a href="#rubric">Scoring Rubric</a>
+      <a href="#rag">RAG and Knowledge Bases</a>
+      <a href="#api-calls">API Call Strategy</a>
+      <div class="sidebar-section">Running It</div>
+      <a href="#setup">Installation</a>
+      <a href="#configuration">Configuration</a>
+      <a href="#usage">Usage</a>
+      <a href="#output">Output Files</a>
+      <div class="sidebar-section">Reference</div>
+      <a href="#troubleshooting">Troubleshooting</a>
+      <a href="#structure">Project Structure</a>
+      <a href="#roadmap">Roadmap</a>
+    </nav>
+  </aside>
+
+  <main class="content">
+
+    <section id="overview">
+      <h2>Overview</h2>
+      <p>The CV Screening Pipeline is an end-to-end AI-powered recruitment tool built for a Capital Markets law firm. It takes a Job Description and a folder of candidate CVs as input and produces a tiered ranked shortlist with per-candidate scorecards — with no human intervention at any stage.</p>
+      <p>The scoring rubric is derived from the JD automatically. Criterion weights, domain map, and keyword reference list are all extracted from the JD itself — not hardcoded. Swap the JD and the rubric adapts.</p>
+      <p>Every score is backed by a sentence quoted directly from the CV. The model is structurally forced to find evidence before it is allowed to assign a number. This makes every decision explainable and auditable.</p>
+      <div class="callout callout-info">
+        <div class="callout-title">Who this is for</div>
+        Built for a Capital Markets law firm hiring junior associates, but the architecture is role-agnostic. The knowledge bases and JD are the only role-specific components.
+      </div>
+    </section>
+
+    <section id="features">
+      <h2>Key Features</h2>
+      <div class="card">
+        <div class="card-title">JD-grounded rubric</div>
+        <div class="card-desc">The rubric is not hardcoded. Gemini reads the JD and extracts criterion weights, a semantic domain map, and a keyword reference list. Every scoring decision traces back to what the JD actually asked for.</div>
+      </div>
+      <div class="card">
+        <div class="card-title">Anonymised before scoring</div>
+        <div class="card-desc">Names, emails, addresses, gender markers, age, and community indicators are stripped before any CV reaches the scoring model. Names are re-attached only at the final output stage, after all scoring is complete.</div>
+      </div>
+      <div class="card">
+        <div class="card-title">Evidence-first scoring</div>
+        <div class="card-desc">The scoring prompt enforces a strict sequence: quote the relevant sentence, analyse what it demonstrates, cross-check against the knowledge base, then assign a score. A score without evidence is structurally impossible.</div>
+      </div>
+      <div class="card">
+        <div class="card-title">Isolated scoring</div>
+        <div class="card-desc">Each candidate is scored in a completely separate API call. No candidate's data is ever in the same context as another candidate's data. This prevents in-context comparison bias — where the model compares candidates against each other rather than against the rubric.</div>
+      </div>
+      <div class="card">
+        <div class="card-title">RAG-grounded lookups</div>
+        <div class="card-desc">Institution tiers, organisation prestige, and Capital Markets terminology are verified against local knowledge bases via ChromaDB. The model reads verified facts you provided — it does not guess from training memory.</div>
+      </div>
+      <div class="card">
+        <div class="card-title">Interactive dashboard</div>
+        <div class="card-desc">Results are served locally at http://127.0.0.1:5000. The tiered ranked list is clickable — every candidate row opens a full evidence-backed scorecard showing JD keywords found and missing, sub-scores, and a plain-English summary.</div>
+      </div>
+    </section>
+
+    <section id="tech">
+      <h2>Tech Stack</h2>
+      <div class="table-wrap">
+        <table>
+          <tr><th>Layer</th><th>Technology</th><th>Why this was chosen</th></tr>
+          <tr><td>Language</td><td><code>Python 3.11+</code></td><td>Dominant ecosystem for AI pipelines — all required libraries are Python-native</td></tr>
+          <tr><td>LLM</td><td><code>Gemini 2.5 Flash</code></td><td>Free tier available, 1M token context window, strong instruction following</td></tr>
+          <tr><td>PDF parsing</td><td><code>Docling (IBM)</code></td><td>Layout-aware — understands multi-column CVs that standard parsers scramble</td></tr>
+          <tr><td>Vector DB</td><td><code>ChromaDB</code></td><td>Local, no server required, persists to disk, right-sized for this scale</td></tr>
+          <tr><td>Embeddings</td><td><code>all-MiniLM-L6-v2</code></td><td>Free, runs locally, sufficient for section-level semantic retrieval</td></tr>
+          <tr><td>Orchestration</td><td>Plain Python</td><td>No framework — every step is visible and debuggable</td></tr>
+          <tr><td>Dashboard</td><td><code>Flask</code></td><td>Lightweight Python web server, no frontend framework needed</td></tr>
+        </table>
+      </div>
+    </section>
+
+    <section id="pipeline">
+      <h2>Pipeline Stages</h2>
+      <p>The pipeline runs sequentially. Each stage reads from the previous stage's output and writes to a known file location. <code>main.py</code> orchestrates the sequence.</p>
+
+      <div class="pipeline-steps">
+        <div class="step">
+          <div class="step-connector">
+            <div class="step-dot" style="background:var(--teal-bg);color:var(--teal)">0A</div>
+            <div class="step-line"></div>
+          </div>
+          <div class="step-body">
+            <div class="step-title">JD Processing</div>
+            <div class="step-desc">Gemini reads the Job Description and extracts criterion weights, a semantic domain map, and a JD keyword reference list. Saved to <code>jd_rubric.json</code>. Called once per run — never repeated per CV.</div>
+            <div class="step-meta"><span class="tag" style="background:var(--amber-bg);color:var(--amber)">1 API call total</span><span class="tag" style="background:var(--gray-bg);color:var(--gray)">step0a_jd_processor.py</span></div>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-connector">
+            <div class="step-dot" style="background:var(--teal-bg);color:var(--teal)">0B</div>
+            <div class="step-line"></div>
+          </div>
+          <div class="step-body">
+            <div class="step-title">CV Parsing and Anonymisation</div>
+            <div class="step-desc">Docling converts each PDF to clean Markdown using layout analysis. Each candidate is assigned an anonymous ID. PII is stripped. The original filename mapping is stored separately and never reaches the scoring model.</div>
+            <div class="step-meta"><span class="tag" style="background:var(--teal-bg);color:var(--teal)">No API calls</span><span class="tag" style="background:var(--gray-bg);color:var(--gray)">step0b_cv_parser.py</span></div>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-connector">
+            <div class="step-dot" style="background:var(--purple-bg);color:var(--purple)">1</div>
+            <div class="step-line"></div>
+          </div>
+          <div class="step-body">
+            <div class="step-title">Extraction and Indexing</div>
+            <div class="step-desc">CVs are batched in groups of 5 and sent to Gemini. For each CV the model extracts structured JSON — degree, institution, CGPA, internships with domain terms found, publications, moot courts. Missing fields return null, never inferred. Profiles and knowledge bases are indexed into ChromaDB.</div>
+            <div class="step-meta"><span class="tag" style="background:var(--blue-bg);color:var(--blue)">1 call per 5 CVs</span><span class="tag" style="background:var(--gray-bg);color:var(--gray)">step1_extractor.py</span></div>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-connector">
+            <div class="step-dot" style="background:var(--purple-bg);color:var(--purple)">2</div>
+            <div class="step-line"></div>
+          </div>
+          <div class="step-body">
+            <div class="step-title">Scoring</div>
+            <div class="step-desc">Each candidate is scored in a completely isolated Gemini call. Before calling the model, relevant CV sections and knowledge base entries are retrieved from ChromaDB via RAG and injected into the prompt. The prompt enforces evidence-first scoring: quote, analyse, cross-check, score.</div>
+            <div class="step-meta"><span class="tag" style="background:var(--red-bg);color:var(--red)">1 call per candidate — never batched</span><span class="tag" style="background:var(--gray-bg);color:var(--gray)">step2_scorer.py</span></div>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-connector">
+            <div class="step-dot" style="background:var(--green-bg);color:var(--green)">3</div>
+          </div>
+          <div class="step-body">
+            <div class="step-title">Output Generation</div>
+            <div class="step-desc">All scorecards are aggregated. Candidates are tiered and sorted. Names are re-attached from the mapping file for the first time since parsing. Three output files are generated. Flask dashboard is launched.</div>
+            <div class="step-meta"><span class="tag" style="background:var(--teal-bg);color:var(--teal)">No API calls</span><span class="tag" style="background:var(--gray-bg);color:var(--gray)">step3_output.py</span></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="rubric">
+      <h2>Scoring Rubric</h2>
+      <p>The rubric has three passes. The weights shown are defaults — actual weights for each run are derived from the JD by the LLM.</p>
+
+      <h3>Pass 1 — Hard Gate</h3>
+      <p>Pass or fail. No partial credit. Candidates who fail either gate exit the pipeline. No scoring API calls are made for failed candidates.</p>
+      <div class="table-wrap">
+        <table>
+          <tr><th>Gate</th><th>Requirement</th><th>Fail condition</th></tr>
+          <tr><td>Degree type</td><td>LLB, BA LLB, or LLB+LLM from a recognised Indian institution</td><td>No qualifying law degree found in CV</td></tr>
+          <tr><td>Degree validity</td><td>Currently pursuing or completed a qualifying degree</td><td>No law education found at all</td></tr>
+        </table>
+      </div>
+
+      <h3>Pass 2 — Scored out of 100</h3>
+      <div class="score-grid">
+        <div class="score-card">
+          <div class="score-label">Institution prestige</div>
+          <div class="score-pts" style="color:var(--teal)">15 pts</div>
+          <div class="score-bar" style="background:var(--teal-bg)"><div style="width:15%;height:100%;background:var(--teal);border-radius:2px"></div></div>
+          <div class="score-desc" style="margin-top:10px">NLU = full marks. Recognised private school = partial. Unknown = minimal. RAG-verified against institution tier database.</div>
+        </div>
+        <div class="score-card">
+          <div class="score-label">Internship quality</div>
+          <div class="score-pts" style="color:var(--blue)">25 pts</div>
+          <div class="score-bar" style="background:var(--blue-bg)"><div style="width:25%;height:100%;background:var(--blue);border-radius:2px"></div></div>
+          <div class="score-desc" style="margin-top:10px">Scored on two conditions: organisation reputation AND depth of work described. Full marks require both. RAG-verified against organisation prestige database.</div>
+        </div>
+        <div class="score-card" style="border-color:var(--purple);border-width:1.5px">
+          <div class="score-label">Technical knowledge (highest weight)</div>
+          <div class="score-pts" style="color:var(--purple)">45 pts</div>
+          <div class="score-bar" style="background:var(--purple-bg)"><div style="width:45%;height:100%;background:var(--purple);border-radius:2px"></div></div>
+          <div class="score-desc" style="margin-top:10px">Split into two sub-scores: JD alignment 36 pts (80%) and semantic depth 9 pts (20%). Rewards both exact regulatory knowledge and genuine domain understanding.</div>
+        </div>
+        <div class="score-card">
+          <div class="score-label">Academic performance</div>
+          <div class="score-pts" style="color:var(--amber)">10 pts</div>
+          <div class="score-bar" style="background:var(--amber-bg)"><div style="width:10%;height:100%;background:var(--amber);border-radius:2px"></div></div>
+          <div class="score-desc" style="margin-top:10px">CGPA bands: 8.5+ = full, 7.5–8.4 = competitive, 7.0–7.4 = baseline, below 7.0 = minimal. Boosted by prizes, class rank, merit list mentions.</div>
+        </div>
+      </div>
+
+      <h3>Pass 3 — Bonus Points (capped at +15)</h3>
+      <div class="table-wrap">
+        <table>
+          <tr><th>Criterion</th><th>Max</th><th>Notes</th></tr>
+          <tr><td>Moot court</td><td>+5</td><td>Corporate or CapM themed competitions score higher</td></tr>
+          <tr><td>Publications</td><td>+5</td><td>Recognised law journal, CapM or securities topic preferred</td></tr>
+          <tr><td>International exposure</td><td>+4</td><td>Foreign internship or exchange semester</td></tr>
+          <tr><td>Leadership roles</td><td>+3</td><td>Secretary, president of society etc.</td></tr>
+          <tr><td>Languages</td><td>+3</td><td>Working proficiency beyond English, +1 per language</td></tr>
+        </table>
+      </div>
+
+      <h3>Tier Assignment</h3>
+      <p>Final score = Pass 2 (max 100) + Pass 3 (max +15) = 115-point scale.</p>
+      <div style="margin:16px 0">
+        <div class="tier-row" style="background:var(--green-bg)"><div class="tier-dot" style="background:#27500a"></div><div class="tier-name" style="color:var(--green)">Strong</div><div class="tier-range" style="color:var(--green)">90 – 115</div><div class="tier-desc">Recommend for interview</div></div>
+        <div class="tier-row" style="background:var(--blue-bg)"><div class="tier-dot" style="background:var(--blue)"></div><div class="tier-name" style="color:var(--blue)">Competitive</div><div class="tier-range" style="color:var(--blue)">70 – 89</div><div class="tier-desc">Consider for interview</div></div>
+        <div class="tier-row" style="background:var(--amber-bg)"><div class="tier-dot" style="background:var(--amber)"></div><div class="tier-name" style="color:var(--amber)">Weak</div><div class="tier-range" style="color:var(--amber)">50 – 69</div><div class="tier-desc">Hold — interview if Strong pool is thin</div></div>
+        <div class="tier-row" style="background:var(--red-bg)"><div class="tier-dot" style="background:var(--red)"></div><div class="tier-name" style="color:var(--red)">Below Threshold</div><div class="tier-range" style="color:var(--red)">0 – 49</div><div class="tier-desc">Do not proceed</div></div>
+      </div>
+    </section>
+
+    <section id="rag">
+      <h2>RAG and Knowledge Bases</h2>
+      <p>RAG (Retrieval Augmented Generation) grounds the scoring model in verified facts. Instead of relying on the model's training memory, the pipeline retrieves specific entries from local knowledge bases and injects them into the scoring prompt.</p>
+      <p>Three knowledge bases are stored in <code>knowledge_base/</code> and indexed into ChromaDB at the start of each run.</p>
+      <div class="table-wrap">
+        <table>
+          <tr><th>File</th><th>Contents</th><th>Used for</th></tr>
+          <tr><td><code>institutions.json</code></td><td>All major Indian law schools with tier, NLU status, city, placement notes</td><td>Criterion 2.1 — institution prestige scoring</td></tr>
+          <tr><td><code>organisations.json</code></td><td>Law firms (Tier 1/2/3), regulators, exchanges, investment banks with CapM relevance tags</td><td>Criterion 2.2 — internship organisation quality</td></tr>
+          <tr><td><code>capm_terms.json</code></td><td>26 Capital Markets terms with definitions, correct usage examples, and shallow usage examples</td><td>Criterion 2.3 — technical knowledge depth scoring</td></tr>
+        </table>
+      </div>
+      <div class="callout callout-tip">
+        <div class="callout-title">Keeping knowledge bases current</div>
+        Law firm tiers, NIRF rankings, and SEBI regulations change. Review and update the knowledge base JSON files at the start of each hiring cycle.
+      </div>
+    </section>
+
+    <section id="api-calls">
+      <h2>API Call Strategy</h2>
+      <p>The pipeline makes the minimum number of API calls consistent with quality and reliability.</p>
+      <div class="table-wrap">
+        <table>
+          <tr><th>Stage</th><th>Calls</th><th>Reasoning</th></tr>
+          <tr><td>JD parsing</td><td>1 total</td><td>JD does not change between candidates</td></tr>
+          <tr><td>Extraction</td><td>1 per 5 CVs</td><td>Batching is safe — extraction is mechanical, no quality loss</td></tr>
+          <tr><td>Scoring</td><td>1 per candidate</td><td>Never batched — isolation prevents model drift and comparison bias</td></tr>
+          <tr><td>Total for 100 CVs</td><td>~121 calls</td><td>Down from 700+ with a naive single-call-per-step approach</td></tr>
+        </table>
+      </div>
+      <div class="callout callout-warn">
+        <div class="callout-title">Why scoring is never batched</div>
+        When multiple candidates share a context window, the model compares them against each other rather than against the rubric. Candidate 3's strong profile unconsciously becomes the new baseline, making Candidate 7's identical profile score lower. This is called in-context comparison bias. Isolation prevents it.
+      </div>
+    </section>
+
+    <section id="setup">
+      <h2>Installation</h2>
+      <h3>Prerequisites</h3>
+      <ul>
+        <li>Python 3.11 or higher</li>
+        <li>A Google AI Studio API key — <a href="https://aistudio.google.com" target="_blank">aistudio.google.com</a></li>
+        <li>Gemini 2.5 Flash enabled on your project — verify at <a href="https://ai.dev/rate-limit" target="_blank">ai.dev/rate-limit</a></li>
+        <li>4GB free disk space (Docling downloads ML models on first run)</li>
+      </ul>
+
+      <h3>Steps</h3>
+<pre><code># 1. Clone the repository
+git clone https://github.com/yourusername/cv-screening-pipeline.git
+cd cv-screening-pipeline
+
+# 2. Create virtual environment
+python -m venv venv
+
+# 3. Activate it
+source venv/bin/activate        # Mac / Linux
+venv\Scripts\activate           # Windows
+
+# 4. Install dependencies
+pip install -r requirements.txt
+
+# 5. Set up environment file
+cp .env.example .env
+# Open .env and add your GEMINI_API_KEY
+
+# 6. Verify setup
+python -c "import config; print('Setup successful')"</code></pre>
+    </section>
+
+    <section id="configuration">
+      <h2>Configuration</h2>
+      <h3>Environment variables (.env)</h3>
+<pre><code>GEMINI_API_KEY=your_gemini_api_key_here</code></pre>
+      <p>This is the only secret the project requires. Never commit this file. The <code>.env.example</code> template is safe to commit.</p>
+
+      <h3>Application settings (config.py)</h3>
+      <div class="table-wrap">
+        <table>
+          <tr><th>Setting</th><th>Default</th><th>When to change</th></tr>
+          <tr><td><code>GEMINI_MODEL</code></td><td>gemini-2.5-flash</td><td>If the model is unavailable on your API key — check your rate limits page</td></tr>
+          <tr><td><code>EXTRACTION_BATCH_SIZE</code></td><td>5</td><td>Reduce to 3 for long CVs, increase to 10 for short CVs</td></tr>
+          <tr><td><code>DASHBOARD_PORT</code></td><td>5000</td><td>If port 5000 is already in use on your machine</td></tr>
+          <tr><td><code>RAG_TOP_K</code></td><td>3</td><td>Number of knowledge base results to retrieve per lookup</td></tr>
+        </table>
+      </div>
+    </section>
+
+    <section id="usage">
+      <h2>Usage</h2>
+      <h3>Running the full pipeline</h3>
+<pre><code># Add your JD
+# Replace data/input/job_description.txt with your actual JD
+
+# Add candidate CVs
+# Place PDF files in data/input/cvs/
+
+# Run
+python main.py
+
+# Browser opens automatically at http://127.0.0.1:5000</code></pre>
+
+      <h3>Restarting the dashboard without re-running</h3>
+<pre><code>python dashboard/app.py</code></pre>
+
+      <h3>Running a single stage</h3>
+<pre><code>python -m pipeline.step0a_jd_processor   # Re-parse JD only
+python -m pipeline.step0b_cv_parser      # Re-parse CVs only
+python -m pipeline.step1_extractor       # Re-extract profiles
+python -m pipeline.step2_scorer          # Re-score all candidates
+python -m pipeline.step3_output          # Re-generate output files</code></pre>
+    </section>
+
+    <section id="output">
+      <h2>Output Files</h2>
+      <div class="table-wrap">
+        <table>
+          <tr><th>File</th><th>Format</th><th>Purpose</th></tr>
+          <tr><td><code>data/output/ranked_list.json</code></td><td>JSON</td><td>Full tiered ranking — feeds the dashboard</td></tr>
+          <tr><td><code>data/output/report.md</code></td><td>Markdown</td><td>Human-readable report — suitable for emailing to a hiring partner</td></tr>
+          <tr><td><code>data/output/scored/C-XXX_scorecard.json</code></td><td>JSON</td><td>Full evidence trail per candidate — all scores with quoted sentences</td></tr>
+          <tr><td><code>data/output/decision_receipts/C-XXX_receipt.json</code></td><td>JSON</td><td>Lightweight audit record — minimum data to defend any decision</td></tr>
+        </table>
+      </div>
+    </section>
+
+    <section id="troubleshooting">
+      <h2>Troubleshooting</h2>
+
+      <h3>Model not found (404)</h3>
+      <p>Check <a href="https://ai.dev/rate-limit" target="_blank">ai.dev/rate-limit</a> and use whichever model shows a non-zero RPM. Update <code>GEMINI_MODEL</code> in <code>config.py</code>.</p>
+
+      <h3>Quota exhausted (429)</h3>
+      <p>Free tier daily limit reached. Wait 24 hours. Alternatively, enable billing on your Google Cloud project for higher quotas.</p>
+
+      <h3>Pipeline appears frozen after Docling shows 100%</h3>
+      <p>Not frozen. Docling is loading 560MB of neural network weights into CPU RAM silently after downloading them. This takes 5–15 minutes on first run with no progress indicator. Do not press Ctrl+C. Wait. Every run after this takes under 30 seconds because the models are cached.</p>
+
+      <h3>ChromaDB telemetry messages</h3>
+      <p>Harmless. To suppress them, add these two lines at the very top of <code>main.py</code> before all other imports:</p>
+<pre><code>import os
+os.environ["ANONYMIZED_TELEMETRY"] = "False"
+os.environ["CHROMA_TELEMETRY"] = "False"</code></pre>
+
+      <h3>Port already in use</h3>
+      <p>Change <code>DASHBOARD_PORT</code> in <code>config.py</code> to any free port such as 5001.</p>
+
+      <h3>Scoring inconsistency between runs</h3>
+      <p>The same candidate may score 5–10 points differently between runs due to LLM non-determinism even at low temperature. This is expected. Strong and weak candidates score consistently. Borderline candidates may shift between adjacent tiers.</p>
+    </section>
+
+    <section id="structure">
+      <h2>Project Structure</h2>
+<pre><code>cv_screening_pipeline/
+|-- main.py                    Entry point and orchestrator
+|-- config.py                  All configuration
+|-- requirements.txt
+|-- .env.example
+|
+|-- data/
+|   |-- input/
+|   |   |-- job_description.txt
+|   |   |-- cvs/               Drop PDFs here
+|   |-- processed/             Auto-generated during run
+|   |-- output/                Auto-generated during run
+|
+|-- knowledge_base/
+|   |-- institutions.json
+|   |-- organisations.json
+|   |-- capm_terms.json
+|
+|-- pipeline/
+|   |-- step0a_jd_processor.py
+|   |-- step0b_cv_parser.py
+|   |-- step1_extractor.py
+|   |-- step2_scorer.py
+|   |-- step3_output.py
+|
+|-- rag/
+|   |-- embedder.py
+|   |-- indexer.py
+|   |-- retriever.py
+|
+|-- prompts/
+|   |-- jd_parse_prompt.txt
+|   |-- extract_and_anonymise_prompt.txt
+|   |-- score_all_criteria.txt
+|
+|-- dashboard/
+|   |-- app.py
+|   |-- templates/
+|   |-- static/
+|
+|-- docs/
+    |-- index.html             This documentation site</code></pre>
+    </section>
+
+    <section id="roadmap">
+      <h2>Roadmap</h2>
+      <h3>Short term</h3>
+      <ul>
+        <li>Role-based rubric switching — <code>--role</code> flag selects Junior, Senior, or Partner-track weight profiles</li>
+        <li>Scoring consistency check — run borderline candidates twice and flag when scores differ by more than 8 points</li>
+        <li>Proactive scorecard flags — highlight missing fields, weak performance on high-weight criteria, and narrow gate passes</li>
+      </ul>
+      <h3>Medium term</h3>
+      <ul>
+        <li>Hosted document parsing — replace local Docling with AWS Textract or Azure Document Intelligence for production deployments</li>
+        <li>REST API wrapper — accept job IDs asynchronously, expose a status endpoint, enable ATS integration</li>
+        <li>Persona matching score — evaluate whether the candidate's overall profile matches the target role persona, once calibration data is available</li>
+      </ul>
+      <h3>Long term</h3>
+      <ul>
+        <li>Multi-language CV support — extend to English-Tamil, English-Malayalam, and other South Indian mixed-language CVs</li>
+        <li>Bias audit module — statistical check for correlations between scores and protected characteristics after each hiring cycle</li>
+        <li>Calibration loop — compare rankings against actual hiring outcomes over time and adjust rubric weights accordingly</li>
+      </ul>
+    </section>
+
+  </main>
+</div>
+
+<footer>
+  <p>CV Screening Pipeline — Built as an internship project for a Capital Markets law firm hiring automation brief.</p>
+</footer>
+
+<script>
+const sections = document.querySelectorAll('section[id]');
+const links = document.querySelectorAll('.sidebar a');
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(e => {
+    if(e.isIntersecting){
+      links.forEach(l => l.classList.remove('active'));
+      const active = document.querySelector(`.sidebar a[href="#${e.target.id}"]`);
+      if(active) active.classList.add('active');
+    }
+  });
+}, {rootMargin:'-20% 0px -70% 0px'});
+sections.forEach(s => observer.observe(s));
+</script>
+</body>
+</html>

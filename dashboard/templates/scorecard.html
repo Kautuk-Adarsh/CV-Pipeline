@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Scorecard — {{ candidate_id }}</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+  <div class="container">
+
+    <div class="back-nav">
+      <a href="/" class="back-link">← Back to ranked list</a>
+    </div>
+
+    {% set tier = scorecard.tier %}
+    <div class="scorecard-header tier-{{ tier.lower().replace(' ', '-') }}">
+      <div class="scorecard-id">{{ candidate_id }}</div>
+      <div class="scorecard-score">{{ scorecard.final_score }} / 115</div>
+      <div class="scorecard-tier">{{ tier }}</div>
+    </div>
+
+    {% if scorecard.summary %}
+    <div class="summary-box">
+      <strong>Summary:</strong> {{ scorecard.summary }}
+    </div>
+    {% endif %}
+
+    <!-- Pass 1 Gate -->
+    <div class="section">
+      <h2>Pass 1 — Gate Check</h2>
+      {% set p1 = scorecard.pass1 %}
+      {% set gate_result = "PASSED" if p1.overall_pass1 else "FAILED" %}
+      <div class="gate-result {{ 'gate-pass' if p1.overall_pass1 else 'gate-fail' }}">
+        Gate result: {{ gate_result }}
+      </div>
+
+      <div class="criterion-card">
+        <div class="criterion-label">1.1 — Degree type</div>
+        {% set g1 = p1.gate_1_1_degree %}
+        <div class="gate-badge {{ 'badge-pass' if g1.result == 'pass' else 'badge-fail' }}">{{ g1.result | upper }}</div>
+        <div class="evidence-block">
+          <span class="evidence-label">Evidence:</span>
+          <span class="evidence-text">{{ g1.evidence }}</span>
+        </div>
+        <div class="reasoning-text">{{ g1.reasoning }}</div>
+      </div>
+
+      <div class="criterion-card">
+        <div class="criterion-label">1.2 — Current backlogs</div>
+        {% set g2 = p1.gate_1_2_backlogs %}
+        <div class="gate-badge {{ 'badge-pass' if g2.result == 'pass' else 'badge-fail' }}">{{ g2.result | upper }}</div>
+        <div class="evidence-block">
+          <span class="evidence-label">Evidence:</span>
+          <span class="evidence-text">{{ g2.evidence }}</span>
+        </div>
+        <div class="reasoning-text">{{ g2.reasoning }}</div>
+      </div>
+    </div>
+
+    {% if p1.overall_pass1 %}
+    <!-- Pass 2 -->
+    <div class="section">
+      <h2>Pass 2 — Scoring <span class="section-total">{{ scorecard.pass2.total_pass2_score }} / 100</span></h2>
+
+      {% set p2 = scorecard.pass2 %}
+
+      <!-- 2.1 Institution -->
+      <div class="criterion-card">
+        <div class="criterion-header">
+          <span class="criterion-label">2.1 — Institution prestige</span>
+          <span class="criterion-score">{{ p2.criterion_2_1.score }} / 20</span>
+        </div>
+        <div class="score-bar-wrap">
+          <div class="score-bar" data-width="{{ (p2.criterion_2_1.score / 20 * 100) | int }}"></div>
+        </div>
+        <div class="evidence-block">
+          <span class="evidence-label">Evidence:</span>
+          <span class="evidence-text">{{ p2.criterion_2_1.evidence }}</span>
+        </div>
+        <div class="reasoning-text">{{ p2.criterion_2_1.reasoning }}</div>
+        <div class="rag-note">RAG tier: {{ p2.criterion_2_1.tier_from_rag }}</div>
+      </div>
+
+      <!-- 2.2 Internship -->
+      <div class="criterion-card">
+        <div class="criterion-header">
+          <span class="criterion-label">2.2 — Internship quality</span>
+          <span class="criterion-score">{{ p2.criterion_2_2.score }} / 25</span>
+        </div>
+        <div class="score-bar-wrap">
+          <div class="score-bar" data-width="{{ (p2.criterion_2_2.score / 25 * 100) | int }}"></div>
+        </div>
+        {% for internship in p2.criterion_2_2.internships_evaluated %}
+        <div class="internship-item">
+          <div class="internship-org">{{ internship.organisation }} <span class="org-tier">(Tier {{ internship.org_tier }})</span></div>
+          <div class="depth-badge depth-{{ internship.work_depth }}">{{ internship.work_depth }}</div>
+          <div class="evidence-block">
+            <span class="evidence-label">Evidence:</span>
+            <span class="evidence-text">{{ internship.evidence }}</span>
+          </div>
+        </div>
+        {% endfor %}
+        <div class="reasoning-text">{{ p2.criterion_2_2.overall_reasoning }}</div>
+      </div>
+
+      <!-- 2.3 Technical -->
+      <div class="criterion-card">
+        <div class="criterion-header">
+          <span class="criterion-label">2.3 — Technical knowledge ★</span>
+          <span class="criterion-score">{{ p2.criterion_2_3.total_score }} / 45</span>
+        </div>
+        <div class="score-bar-wrap">
+          <div class="score-bar highlight" data-width="{{ (p2.criterion_2_3.total_score / 45 * 100) | int }}"></div>
+        </div>
+
+        <div class="subscore-row">
+          <div class="subscore-block">
+            <div class="subscore-label">Sub-score A — JD alignment (max 36)</div>
+            <div class="subscore-value">{{ p2.criterion_2_3.subscore_a.score }} / 36</div>
+            <div class="evidence-block">
+              <span class="evidence-label">Evidence:</span>
+              <span class="evidence-text">{{ p2.criterion_2_3.subscore_a.evidence }}</span>
+            </div>
+            <div class="reasoning-text">{{ p2.criterion_2_3.subscore_a.reasoning }}</div>
+          </div>
+          <div class="subscore-block">
+            <div class="subscore-label">Sub-score B — Semantic depth (max 9)</div>
+            <div class="subscore-value">{{ p2.criterion_2_3.subscore_b.score }} / 9</div>
+            <div class="evidence-block">
+              <span class="evidence-label">Evidence:</span>
+              <span class="evidence-text">{{ p2.criterion_2_3.subscore_b.evidence }}</span>
+            </div>
+            <div class="reasoning-text">{{ p2.criterion_2_3.subscore_b.reasoning }}</div>
+          </div>
+        </div>
+
+        {% if p2.criterion_2_3.jd_keywords_found %}
+        <div class="keywords-found">
+          <span class="kw-label">JD keywords found:</span>
+          {% for kw in p2.criterion_2_3.jd_keywords_found %}
+            <span class="kw-tag">{{ kw }}</span>
+          {% endfor %}
+        </div>
+        {% endif %}
+
+        {% if p2.criterion_2_3.jd_keywords_missing %}
+        <div class="keywords-missing">
+          <span class="kw-label">JD keywords missing:</span>
+          {% for kw in p2.criterion_2_3.jd_keywords_missing %}
+            <span class="kw-tag missing">{{ kw }}</span>
+          {% endfor %}
+        </div>
+        {% endif %}
+      </div>
+
+      <!-- 2.4 Academic -->
+      <div class="criterion-card">
+        <div class="criterion-header">
+          <span class="criterion-label">2.4 — Academic performance</span>
+          <span class="criterion-score">{{ p2.criterion_2_4.score }} / 10</span>
+        </div>
+        <div class="score-bar-wrap">
+          <div class="score-bar" data-width="{{ (p2.criterion_2_4.score / 10 * 100) | int }}"></div>
+        </div>
+        <div class="evidence-block">
+          <span class="evidence-label">Evidence:</span>
+          <span class="evidence-text">{{ p2.criterion_2_4.evidence }}</span>
+        </div>
+        <div class="reasoning-text">{{ p2.criterion_2_4.reasoning }}</div>
+        {% if p2.criterion_2_4.cgpa %}
+        <div class="rag-note">CGPA: {{ p2.criterion_2_4.cgpa }} | Band: {{ p2.criterion_2_4.cgpa_band }}</div>
+        {% endif %}
+      </div>
+    </div>
+
+    <!-- Pass 3 -->
+    <div class="section">
+      <h2>Pass 3 — Bonus Points <span class="section-total">+{{ scorecard.pass3.total_pass3_score }} / 15</span></h2>
+
+      {% set p3 = scorecard.pass3 %}
+      {% set bonus_criteria = [
+        ("Moot court", p3.moot_court, 5),
+        ("Publications", p3.publications, 5),
+        ("International exposure", p3.international_exposure, 4),
+        ("Leadership", p3.leadership, 3),
+        ("Languages", p3.languages, 3),
+      ] %}
+
+      {% for label, criterion, max_pts in bonus_criteria %}
+        {% if criterion %}
+        <div class="bonus-card {{ 'bonus-zero' if criterion.score == 0 else '' }}">
+          <div class="bonus-header">
+            <span class="bonus-label">{{ label }}</span>
+            <span class="bonus-score">+{{ criterion.score }} / {{ max_pts }}</span>
+          </div>
+          <div class="evidence-text">{{ criterion.evidence }}</div>
+        </div>
+        {% endif %}
+      {% endfor %}
+    </div>
+    {% endif %}
+
+    <div class="footer">
+      <a href="/" class="back-link">← Back to ranked list</a>
+    </div>
+
+  </div>
+
+  <script>
+    document.querySelectorAll('.score-bar[data-width]').forEach((bar) => {
+      const width = Number(bar.dataset.width || 0);
+      bar.style.width = `${Math.max(0, Math.min(100, width))}%`;
+    });
+  </script>
+</body>
+</html>

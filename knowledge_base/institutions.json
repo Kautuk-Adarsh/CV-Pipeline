@@ -1,0 +1,242 @@
+[
+  {
+    "name": "National Law School of India University",
+    "abbreviation": "NLSIU",
+    "city": "Bangalore",
+    "state": "Karnataka",
+    "tier": 1,
+    "is_nlu": true,
+    "nirf_rank": 1,
+    "notes": "Top-ranked NLU. Consistently produces top Capital Markets candidates. Highest placement record among NLUs."
+  },
+  {
+    "name": "NALSAR University of Law",
+    "abbreviation": "NALSAR",
+    "city": "Hyderabad",
+    "state": "Telangana",
+    "tier": 1,
+    "is_nlu": true,
+    "nirf_rank": 2,
+    "notes": "Top-5 NLU. Strong corporate and transactional law focus."
+  },
+  {
+    "name": "National Law Institute University",
+    "abbreviation": "NLIU",
+    "city": "Bhopal",
+    "state": "Madhya Pradesh",
+    "tier": 1,
+    "is_nlu": true,
+    "nirf_rank": 3,
+    "notes": "Top-5 NLU. Solid placement record with Tier 1 firms."
+  },
+  {
+    "name": "West Bengal National University of Juridical Sciences",
+    "abbreviation": "NUJS",
+    "city": "Kolkata",
+    "state": "West Bengal",
+    "tier": 1,
+    "is_nlu": true,
+    "nirf_rank": 4,
+    "notes": "Top-5 NLU. Strong Capital Markets and M&A placement history."
+  },
+  {
+    "name": "National Law University Delhi",
+    "abbreviation": "NLU Delhi",
+    "city": "New Delhi",
+    "state": "Delhi",
+    "tier": 1,
+    "is_nlu": true,
+    "nirf_rank": 5,
+    "notes": "Top-5 NLU. Located in Delhi — strong proximity advantage with SEBI and regulatory bodies."
+  },
+  {
+    "name": "Gujarat National Law University",
+    "abbreviation": "GNLU",
+    "city": "Gandhinagar",
+    "state": "Gujarat",
+    "tier": 1,
+    "is_nlu": true,
+    "nirf_rank": 6,
+    "notes": "Top-10 NLU. Strong corporate law placement."
+  },
+  {
+    "name": "Rajiv Gandhi National University of Law",
+    "abbreviation": "RGNUL",
+    "city": "Patiala",
+    "state": "Punjab",
+    "tier": 1,
+    "is_nlu": true,
+    "nirf_rank": 7,
+    "notes": "NLU. Recognised placement record."
+  },
+  {
+    "name": "Chanakya National Law University",
+    "abbreviation": "CNLU",
+    "city": "Patna",
+    "state": "Bihar",
+    "tier": 1,
+    "is_nlu": true,
+    "nirf_rank": 8,
+    "notes": "NLU."
+  },
+  {
+    "name": "National University of Advanced Legal Studies",
+    "abbreviation": "NUALS",
+    "city": "Kochi",
+    "state": "Kerala",
+    "tier": 1,
+    "is_nlu": true,
+    "nirf_rank": 9,
+    "notes": "NLU."
+  },
+  {
+    "name": "National Law University Odisha",
+    "abbreviation": "NLUO",
+    "city": "Cuttack",
+    "state": "Odisha",
+    "tier": 1,
+    "is_nlu": true,
+    "nirf_rank": 10,
+    "notes": "NLU."
+  },
+  {
+    "name": "Hidayatullah National Law University",
+    "abbreviation": "HNLU",
+    "city": "Raipur",
+    "state": "Chhattisgarh",
+    "tier": 1,
+    "is_nlu": true,
+    "nirf_rank": 11,
+    "notes": "NLU."
+  },
+  {
+    "name": "National Law University Jodhpur",
+    "abbreviation": "NLUJ",
+    "city": "Jodhpur",
+    "state": "Rajasthan",
+    "tier": 1,
+    "is_nlu": true,
+    "nirf_rank": 12,
+    "notes": "NLU. Growing placement record with Tier 1 firms."
+  },
+  {
+    "name": "Damodaram Sanjivayya National Law University",
+    "abbreviation": "DSNLU",
+    "city": "Visakhapatnam",
+    "state": "Andhra Pradesh",
+    "tier": 1,
+    "is_nlu": true,
+    "nirf_rank": 13,
+    "notes": "NLU."
+  },
+  {
+    "name": "Tamil Nadu National Law University",
+    "abbreviation": "TNNLU",
+    "city": "Tiruchirappalli",
+    "state": "Tamil Nadu",
+    "tier": 1,
+    "is_nlu": true,
+    "nirf_rank": 14,
+    "notes": "NLU."
+  },
+  {
+    "name": "Maharashtra National Law University Mumbai",
+    "abbreviation": "MNLU Mumbai",
+    "city": "Mumbai",
+    "state": "Maharashtra",
+    "tier": 1,
+    "is_nlu": true,
+    "nirf_rank": 15,
+    "notes": "NLU. Mumbai location gives strong proximity advantage with BSE, NSE, and investment banks."
+  },
+  {
+    "name": "Symbiosis Law School",
+    "abbreviation": "SLS",
+    "city": "Pune",
+    "state": "Maharashtra",
+    "tier": 2,
+    "is_nlu": false,
+    "nirf_rank": null,
+    "notes": "Top private law school. Strong placement record. Symbiosis International University affiliation."
+  },
+  {
+    "name": "Jindal Global Law School",
+    "abbreviation": "JGLS",
+    "city": "Sonipat",
+    "state": "Haryana",
+    "tier": 2,
+    "is_nlu": false,
+    "nirf_rank": null,
+    "notes": "Top private law school. International curriculum. Growing Tier 1 placement record."
+  },
+  {
+    "name": "Amity Law School",
+    "abbreviation": "ALS",
+    "city": "Noida",
+    "state": "Uttar Pradesh",
+    "tier": 2,
+    "is_nlu": false,
+    "nirf_rank": null,
+    "notes": "Recognised private law school. Moderate placement record."
+  },
+  {
+    "name": "Christ University School of Law",
+    "abbreviation": "Christ Law",
+    "city": "Bangalore",
+    "state": "Karnataka",
+    "tier": 2,
+    "is_nlu": false,
+    "nirf_rank": null,
+    "notes": "Recognised private law school. Solid reputation in South India."
+  },
+  {
+    "name": "Government Law College",
+    "abbreviation": "GLC",
+    "city": "Mumbai",
+    "state": "Maharashtra",
+    "tier": 2,
+    "is_nlu": false,
+    "nirf_rank": null,
+    "notes": "Oldest law school in Asia. Strong alumni network in Mumbai legal community. Produces Tier 1 placements."
+  },
+  {
+    "name": "Faculty of Law Delhi University",
+    "abbreviation": "DU Law",
+    "city": "New Delhi",
+    "state": "Delhi",
+    "tier": 2,
+    "is_nlu": false,
+    "nirf_rank": null,
+    "notes": "Large public law school. Variable placement quality. Strong alumni base."
+  },
+  {
+    "name": "ILS Law College",
+    "abbreviation": "ILS",
+    "city": "Pune",
+    "state": "Maharashtra",
+    "tier": 2,
+    "is_nlu": false,
+    "nirf_rank": null,
+    "notes": "Recognised law school. Moderate placement record."
+  },
+  {
+    "name": "Bangalore Institute of Legal Studies",
+    "abbreviation": "BILS",
+    "city": "Bangalore",
+    "state": "Karnataka",
+    "tier": 3,
+    "is_nlu": false,
+    "nirf_rank": null,
+    "notes": "Tier 3 law school. Minimal placement history with Tier 1 firms."
+  },
+  {
+    "name": "Unknown Institution",
+    "abbreviation": "UNKNOWN",
+    "city": null,
+    "state": null,
+    "tier": 3,
+    "is_nlu": false,
+    "nirf_rank": null,
+    "notes": "Default entry for institutions not found in the database. Scores minimal points on criterion 2.1."
+  }
+]

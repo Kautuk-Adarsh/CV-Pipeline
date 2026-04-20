@@ -1,0 +1,236 @@
+[
+  {
+    "term": "SEBI",
+    "full_name": "Securities and Exchange Board of India",
+    "domain": "regulation",
+    "category": "regulator",
+    "correct_usage_example": "Drafted SEBI filing for preferential allotment under ICDR Regulations",
+    "shallow_usage_example": "Aware of SEBI regulations",
+    "notes": "Primary securities regulator. Mention alone is shallow. Must be in transaction or regulatory context to score high."
+  },
+  {
+    "term": "ICDR Regulations",
+    "full_name": "SEBI (Issue of Capital and Disclosure Requirements) Regulations, 2018",
+    "domain": "primary_market",
+    "category": "regulation",
+    "correct_usage_example": "Assisted in drafting risk factors section of DRHP under Schedule VI of ICDR Regulations, 2018",
+    "shallow_usage_example": "Familiar with ICDR regulations",
+    "notes": "Core regulation governing IPOs, rights issues, and preferential allotments. Contextual use is high signal for CapM knowledge."
+  },
+  {
+    "term": "LODR",
+    "full_name": "SEBI (Listing Obligations and Disclosure Requirements) Regulations, 2015",
+    "domain": "secondary_market",
+    "category": "regulation",
+    "correct_usage_example": "Prepared LODR compliance checklist for a newly listed entity post-IPO",
+    "shallow_usage_example": "Aware of LODR requirements",
+    "notes": "Governs ongoing disclosure obligations of listed companies. Correct usage shows understanding of post-listing compliance."
+  },
+  {
+    "term": "DRHP",
+    "full_name": "Draft Red Herring Prospectus",
+    "domain": "primary_market",
+    "category": "document",
+    "correct_usage_example": "Assisted in drafting of DRHP including risk factors, litigation disclosures, and financial statements section",
+    "shallow_usage_example": "Helped with DRHP",
+    "notes": "The primary disclosure document filed with SEBI before an IPO. Drafting involvement is very strong signal."
+  },
+  {
+    "term": "Red Herring Prospectus",
+    "full_name": "Red Herring Prospectus",
+    "domain": "primary_market",
+    "category": "document",
+    "correct_usage_example": "Reviewed Red Herring Prospectus for compliance with ICDR disclosure norms",
+    "shallow_usage_example": "Worked on prospectus",
+    "notes": "Filed after SEBI observations on DRHP. Equivalent signal to DRHP involvement."
+  },
+  {
+    "term": "IPO",
+    "full_name": "Initial Public Offering",
+    "domain": "primary_market",
+    "category": "transaction_type",
+    "correct_usage_example": "Advised on end-to-end IPO process including DRHP drafting, SEBI filing, and listing agreement",
+    "shallow_usage_example": "Worked on an IPO",
+    "notes": "Core Capital Markets transaction. Mention alone is not enough — the work described matters."
+  },
+  {
+    "term": "SME IPO",
+    "full_name": "Small and Medium Enterprise Initial Public Offering",
+    "domain": "primary_market",
+    "category": "transaction_type",
+    "correct_usage_example": "Assisted in DRHP preparation for SME IPO on NSE Emerge platform",
+    "shallow_usage_example": "Worked on SME IPO",
+    "notes": "IPOs on NSE Emerge or BSE SME platforms. Valid CapM transaction — narrower than mainboard IPO but genuine experience."
+  },
+  {
+    "term": "QIP",
+    "full_name": "Qualified Institutions Placement",
+    "domain": "primary_market",
+    "category": "transaction_type",
+    "correct_usage_example": "Assisted in QIP of listed company — drafted placement document and reviewed institutional investor agreements",
+    "shallow_usage_example": "Aware of QIP process",
+    "notes": "Capital raising by listed companies to qualified institutional buyers. Strong CapM signal."
+  },
+  {
+    "term": "Rights Issue",
+    "full_name": "Rights Issue",
+    "domain": "primary_market",
+    "category": "transaction_type",
+    "correct_usage_example": "Assisted in drafting of letter of offer for rights issue under ICDR Regulations",
+    "shallow_usage_example": "Familiar with rights issues",
+    "notes": "Offering of securities to existing shareholders. Governed by ICDR. Valid CapM transaction type."
+  },
+  {
+    "term": "FEMA",
+    "full_name": "Foreign Exchange Management Act, 1999",
+    "domain": "cross_border",
+    "category": "regulation",
+    "correct_usage_example": "Advised on FEMA compliance for FPI investment in the QIP and reviewed RBI approvals",
+    "shallow_usage_example": "Knowledge of FEMA",
+    "notes": "Governs cross-border transactions and foreign investment. Relevant for FPI participation in Indian capital markets."
+  },
+  {
+    "term": "FPI",
+    "full_name": "Foreign Portfolio Investor",
+    "domain": "cross_border",
+    "category": "investor_type",
+    "correct_usage_example": "Drafted FPI registration documents and reviewed SEBI FPI Regulations for compliance",
+    "shallow_usage_example": "Worked with FPIs",
+    "notes": "Foreign institutional investors registered with SEBI. Common in QIPs and secondary market transactions."
+  },
+  {
+    "term": "Book Building",
+    "full_name": "Book Building Process",
+    "domain": "primary_market",
+    "category": "process",
+    "correct_usage_example": "Assisted in price band determination and book building process management for mainboard IPO",
+    "shallow_usage_example": "Aware of book building",
+    "notes": "Price discovery mechanism for IPOs. Knowledge shows understanding of the mechanics of public issues."
+  },
+  {
+    "term": "Anchor Investor",
+    "full_name": "Anchor Investor",
+    "domain": "primary_market",
+    "category": "investor_type",
+    "correct_usage_example": "Reviewed anchor investor allocation process and lock-in requirements under ICDR Regulations",
+    "shallow_usage_example": "Aware of anchor investors",
+    "notes": "Qualified institutional buyer allocated shares before IPO opens. Governed by ICDR. Knowledge shows IPO process depth."
+  },
+  {
+    "term": "Escrow",
+    "full_name": "Escrow Account",
+    "domain": "primary_market",
+    "category": "mechanism",
+    "correct_usage_example": "Drafted escrow agreement and reviewed ASBA process compliance for IPO proceeds",
+    "shallow_usage_example": "Aware of escrow arrangements",
+    "notes": "Account holding IPO application monies. Part of ASBA mechanism. Knowledge shows operational CapM depth."
+  },
+  {
+    "term": "ASBA",
+    "full_name": "Application Supported by Blocked Amount",
+    "domain": "primary_market",
+    "category": "mechanism",
+    "correct_usage_example": "Reviewed ASBA compliance requirements and self-certified syndicate bank obligations",
+    "shallow_usage_example": "Aware of ASBA",
+    "notes": "IPO application mechanism. Shows operational knowledge of primary market processes."
+  },
+  {
+    "term": "Due Diligence",
+    "full_name": "Legal Due Diligence",
+    "domain": "transaction_process",
+    "category": "process",
+    "correct_usage_example": "Conducted legal due diligence on target company for IPO — reviewed material contracts, litigation, and regulatory approvals",
+    "shallow_usage_example": "Assisted in due diligence",
+    "notes": "Core transactional process. Drafting of due diligence reports is high signal. Vague assistance mention is low signal."
+  },
+  {
+    "term": "Listing Agreement",
+    "full_name": "Listing Agreement",
+    "domain": "secondary_market",
+    "category": "document",
+    "correct_usage_example": "Reviewed listing agreement and post-listing compliance obligations under LODR",
+    "shallow_usage_example": "Aware of listing requirements",
+    "notes": "Agreement between the company and the stock exchange at time of listing. Post-LODR, much of this is subsumed into LODR compliance."
+  },
+  {
+    "term": "Merchant Banker",
+    "full_name": "SEBI Registered Merchant Banker",
+    "domain": "primary_market",
+    "category": "intermediary",
+    "correct_usage_example": "Advised merchant banker on SEBI filing obligations and issue management responsibilities under ICDR",
+    "shallow_usage_example": "Worked with merchant bankers",
+    "notes": "Lead manager in IPO process. Understanding of merchant banker obligations shows CapM process knowledge."
+  },
+  {
+    "term": "Preferential Allotment",
+    "full_name": "Preferential Allotment",
+    "domain": "primary_market",
+    "category": "transaction_type",
+    "correct_usage_example": "Drafted board and shareholder resolutions for preferential allotment under ICDR and Companies Act 2013",
+    "shallow_usage_example": "Aware of preferential allotments",
+    "notes": "Allotment of securities to select investors. Governed by ICDR and Companies Act. Common in PE/VC investments in listed companies."
+  },
+  {
+    "term": "Offer Document",
+    "full_name": "Offer Document",
+    "domain": "primary_market",
+    "category": "document",
+    "correct_usage_example": "Drafted sections of the offer document including risk factors, litigation disclosures, and use of proceeds",
+    "shallow_usage_example": "Helped with offer document",
+    "notes": "Umbrella term for prospectus, information memorandum etc. Specific drafting work is high signal."
+  },
+  {
+    "term": "NSE Emerge",
+    "full_name": "NSE Emerge Platform",
+    "domain": "primary_market",
+    "category": "exchange_platform",
+    "correct_usage_example": "Assisted in SME IPO listing on NSE Emerge — prepared application and reviewed exchange eligibility criteria",
+    "shallow_usage_example": "Aware of NSE Emerge",
+    "notes": "SME listing platform of NSE. Knowledge shows awareness of SME Capital Markets."
+  },
+  {
+    "term": "BSE SME",
+    "full_name": "BSE SME Platform",
+    "domain": "primary_market",
+    "category": "exchange_platform",
+    "correct_usage_example": "Assisted in migration from BSE SME to mainboard — reviewed eligibility criteria and prepared migration application",
+    "shallow_usage_example": "Aware of BSE SME",
+    "notes": "SME listing platform of BSE. Equivalent to NSE Emerge."
+  },
+  {
+    "term": "Companies Act 2013",
+    "full_name": "Companies Act, 2013",
+    "domain": "corporate_law",
+    "category": "regulation",
+    "correct_usage_example": "Reviewed board composition requirements and audit committee obligations under Companies Act 2013 for IPO readiness",
+    "shallow_usage_example": "Knowledge of Companies Act",
+    "notes": "Primary corporate statute. Adjacent to CapM but not core CapM. Mention in IPO-readiness or listing context scores higher than standalone mention."
+  },
+  {
+    "term": "NCLT",
+    "full_name": "National Company Law Tribunal",
+    "domain": "corporate_law",
+    "category": "forum",
+    "correct_usage_example": "Assisted in NCLT filing for scheme of arrangement preceding the company's IPO",
+    "shallow_usage_example": "Aware of NCLT proceedings",
+    "notes": "Tribunal for corporate disputes and restructuring. Relevant for pre-IPO restructuring matters."
+  },
+  {
+    "term": "Debt Capital Markets",
+    "full_name": "Debt Capital Markets",
+    "domain": "debt_market",
+    "category": "market_segment",
+    "correct_usage_example": "Assisted in issuance of non-convertible debentures — drafted information memorandum and reviewed SEBI NCS Regulations",
+    "shallow_usage_example": "Aware of debt capital markets",
+    "notes": "Bond and debenture issuances. Strong CapM signal alongside equity markets knowledge."
+  },
+  {
+    "term": "NCD",
+    "full_name": "Non-Convertible Debentures",
+    "domain": "debt_market",
+    "category": "instrument",
+    "correct_usage_example": "Reviewed NCD trust deed and debenture trustee obligations under SEBI NCS Regulations",
+    "shallow_usage_example": "Aware of NCDs",
+    "notes": "Common debt capital markets instrument. Knowledge shows awareness of both equity and debt CapM."
+  }
+]
