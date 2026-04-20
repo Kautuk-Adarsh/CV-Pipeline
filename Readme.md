@@ -104,14 +104,6 @@ python dashboard/app.py
 **Quota exhausted (429)** — Free tier daily limit reached. Wait 24 hours.
 
 **Frozen after Docling shows 100%** — Not frozen. Loading 560MB of ML models into RAM silently. Wait up to 15 minutes. Subsequent runs take under 30 seconds.
-
-**ChromaDB telemetry noise** — Add to the very top of `main.py` before all imports:
-```python
-import os
-os.environ["ANONYMIZED_TELEMETRY"] = "False"
-os.environ["CHROMA_TELEMETRY"] = "False"
-```
-
 ## Project Structure
 
 ```
